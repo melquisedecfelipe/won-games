@@ -8,7 +8,7 @@ export const ForgotPassword = styled.a`
     color: ${theme.colors.black};
     text-decoration: none;
     text-align: right;
-    
+
     &:hover {
       color: ${lighten(0.2, theme.colors.black)};
     }
