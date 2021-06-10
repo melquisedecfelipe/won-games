@@ -63,12 +63,6 @@ exports[`<Footer /> should render 4 column topics 1`] = `
 }
 
 @media (min-width:768px) {
-  .c5 {
-    font-size: 2.8rem;
-  }
-}
-
-@media (min-width:768px) {
   .c2 {
     grid-template-columns: repeat(4,1fr);
   }
