@@ -1,14 +1,13 @@
 import { screen, waitFor } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 import userEvent from '@testing-library/user-event'
 import { Email } from '@styled-icons/material-outlined'
-
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import TextField from '.'
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="Field" id="Field" />)
+    renderWithTheme(<TextField label="Label" name="Label" />)
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument()
   })
@@ -40,13 +39,12 @@ describe('<TextField />', () => {
   })
 
   it('Changes its value when typing', async () => {
-    const onInput = jest.fn()
+    const onInputChange = jest.fn()
     renderWithTheme(
       <TextField
-        onInput={onInput}
+        onInputChange={onInputChange}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
       />
     )
 
@@ -56,19 +54,18 @@ describe('<TextField />', () => {
 
     await waitFor(() => {
       expect(input).toHaveValue(text)
-      expect(onInput).toHaveBeenCalledTimes(text.length)
+      expect(onInputChange).toHaveBeenCalledTimes(text.length)
     })
-    expect(onInput).toHaveBeenCalledWith(text)
+    expect(onInputChange).toHaveBeenCalledWith(text)
   })
 
   it('Does not changes its value when disabled', async () => {
-    const onInput = jest.fn()
+    const onInputChange = jest.fn()
     renderWithTheme(
       <TextField
-        onInput={onInput}
+        onInputChange={onInputChange}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         disabled
       />
     )
@@ -82,7 +79,7 @@ describe('<TextField />', () => {
     await waitFor(() => {
       expect(input).not.toHaveValue(text)
     })
-    expect(onInput).not.toHaveBeenCalled()
+    expect(onInputChange).not.toHaveBeenCalled()
   })
 
   it('Renders with error', () => {
@@ -90,7 +87,6 @@ describe('<TextField />', () => {
       <TextField
         icon={<Email data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
         error="Error message"
       />
     )
@@ -101,9 +97,7 @@ describe('<TextField />', () => {
   })
 
   it('Is accessible by tab', () => {
-    renderWithTheme(
-      <TextField label="TextField" labelFor="TextField" id="TextField" />
-    )
+    renderWithTheme(<TextField label="TextField" name="TextField" />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()
@@ -113,14 +107,7 @@ describe('<TextField />', () => {
   })
 
   it('Is not accessible by tab when disabled', () => {
-    renderWithTheme(
-      <TextField
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-        disabled
-      />
-    )
+    renderWithTheme(<TextField label="TextField" name="TextField" disabled />)
 
     const input = screen.getByLabelText('TextField')
     expect(document.body).toHaveFocus()

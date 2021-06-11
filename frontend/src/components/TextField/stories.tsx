@@ -8,11 +8,11 @@ export default {
   component: TextField,
   args: {
     label: 'E-mail',
-    labelFor: 'Email',
+    name: 'email',
     icon: <Email />,
-    id: 'Email',
     initialValue: '',
-    placeholder: 'john.cage@gmail.com'
+    placeholder: 'john.cage@gmail.com',
+    disabled: false
   },
   argTypes: {
     onInput: { action: 'changed' },
@@ -20,13 +20,13 @@ export default {
   }
 } as Meta
 
-export const Default: Story<TextFieldProps> = args => (
+export const Default: Story<TextFieldProps> = (args) => (
   <div style={{ maxWidth: 300, padding: 15 }}>
     <TextField {...args} />
   </div>
 )
 
-export const withError: Story<TextFieldProps> = args => (
+export const withError: Story<TextFieldProps> = (args) => (
   <div style={{ maxWidth: 300, padding: 15 }}>
     <TextField {...args} />
   </div>
