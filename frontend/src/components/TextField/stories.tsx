@@ -20,13 +20,13 @@ export default {
   }
 } as Meta
 
-export const Default: Story<TextFieldProps> = (args) => (
+export const Default: Story<TextFieldProps> = args => (
   <div style={{ maxWidth: 300, padding: 15 }}>
     <TextField {...args} />
   </div>
 )
 
-export const withError: Story<TextFieldProps> = (args) => (
+export const withError: Story<TextFieldProps> = args => (
   <div style={{ maxWidth: 300, padding: 15 }}>
     <TextField {...args} />
   </div>
