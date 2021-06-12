@@ -8,7 +8,6 @@ export default function Index(props: GameTemplateProps) {
   return <Game {...props} />
 }
 
-// gerar em build time (/game/bla, /bame/foo ...)
 export async function getStaticPaths() {
   return {
     paths: [{ params: { slug: 'cyberpunk-2077' } }],
