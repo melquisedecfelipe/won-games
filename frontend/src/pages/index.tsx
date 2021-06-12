@@ -7,18 +7,18 @@ export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
   return {
     props: {
       banners: bannersMock,
       newGames: gamesMock,
       mostPopularHighlight: highlightMock,
       mostPopularGames: gamesMock,
-      upcommingGames: gamesMock,
-      upcommingHighligth: highlightMock,
-      upcommingMoreGames: gamesMock,
+      upcomingGames: gamesMock,
+      upcomingHighlight: highlightMock,
+      upcomingMoreGames: gamesMock,
       freeGames: gamesMock,
-      freeHighligth: highlightMock
+      freeHighlight: highlightMock
     }
   }
 }
