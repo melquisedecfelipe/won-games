@@ -41,7 +41,7 @@ describe('validations', () => {
 
     it('should return invalid email error', () => {
       const values = {
-        username: 'willian',
+        username: 'melqui',
         email: 'invalid-email',
         password: ''
       }
@@ -53,8 +53,8 @@ describe('validations', () => {
 
     it('should return error if password does not match with confirm password', () => {
       const values = {
-        username: 'willian',
-        email: 'will@won.com',
+        username: 'melqui',
+        email: 'melqui@won.com',
         password: '1234',
         confirm_password: '4321'
       }

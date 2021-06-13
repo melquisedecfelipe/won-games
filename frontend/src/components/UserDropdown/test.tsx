@@ -5,15 +5,15 @@ import UserDropdown from '.'
 
 describe('<UserDropdown />', () => {
   it('should render the username', () => {
-    render(<UserDropdown username="Willian" />)
+    render(<UserDropdown username="Melqui" />)
 
-    expect(screen.getByText(/willian/i)).toBeInTheDocument()
+    expect(screen.getByText(/melqui/i)).toBeInTheDocument()
   })
 
   it('should render the menu', () => {
-    render(<UserDropdown username="Willian" />)
+    render(<UserDropdown username="Melqui" />)
 
-    userEvent.click(screen.getByText(/willian/i))
+    userEvent.click(screen.getByText(/melqui/i))
 
     expect(
       screen.getByRole('link', { name: /my profile/i })
