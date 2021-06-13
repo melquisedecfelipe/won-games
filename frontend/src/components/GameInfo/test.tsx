@@ -6,7 +6,7 @@ const props = {
   id: '1',
   title: 'My Game Title',
   description: 'Game Description',
-  price: '210'
+  price: 210
 }
 
 describe('<GameInfo />', () => {
