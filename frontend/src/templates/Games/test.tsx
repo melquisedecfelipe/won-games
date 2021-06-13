@@ -27,7 +27,12 @@ jest.mock('templates/Base', () => ({
   }
 }))
 
-jest.setTimeout(50000)
+jest.mock('next/link', () => ({
+  __esModule: true,
+  default: function Mock({ children }: { children: React.ReactNode }) {
+    return <div>{children}</div>
+  }
+}))
 
 describe('<Games />', () => {
   it('should render sections', async () => {
