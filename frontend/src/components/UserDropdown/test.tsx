@@ -5,21 +5,23 @@ import UserDropdown from '.'
 
 describe('<UserDropdown />', () => {
   it('should render the username', () => {
-    render(<UserDropdown username="Melqui" />)
+    render(<UserDropdown username="Willian" />)
 
-    expect(screen.getByText(/melqui/i)).toBeInTheDocument()
+    expect(screen.getByText(/willian/i)).toBeInTheDocument()
   })
 
   it('should render the menu', () => {
-    render(<UserDropdown username="Melqui" />)
+    render(<UserDropdown username="Willian" />)
 
-    userEvent.click(screen.getByText(/melqui/i))
+    userEvent.click(screen.getByText(/willian/i))
 
     expect(
       screen.getByRole('link', { name: /my profile/i })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: /wishlist/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /sign out/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /sign out/i })
+    ).toBeInTheDocument()
   })
 })
