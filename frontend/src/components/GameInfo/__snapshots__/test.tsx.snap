@@ -129,11 +129,12 @@ exports[`<GameInfo /> should render game informations 1`] = `
   align-items: center;
   font-weight: 600;
   color: #FAFAFA;
+  z-index: 10;
+  background-color: #3CD3C1;
   font-size: 1.4rem;
   padding: 0 2.4rem;
   height: 3.6rem;
   right: -2rem;
-  background-color: #3CD3C1;
 }
 
 .c3::before {
@@ -148,14 +149,14 @@ exports[`<GameInfo /> should render game informations 1`] = `
 }
 
 .c3::before {
-  top: 3.6rem;
-  border-top-width: 1rem;
-  border-right-width: 2rem;
+  border-left-color: #1f8a7d;
+  border-top-color: #1f8a7d;
 }
 
 .c3::before {
-  border-left-color: #1f8a7d;
-  border-top-color: #1f8a7d;
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
 }
 
 .c0 {
