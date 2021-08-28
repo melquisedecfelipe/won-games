@@ -22,12 +22,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await protectedRoutes(context)
   const apolloClient = initializeApollo(null, session)
 
-  if (!session) return {}
+  if (!session) return { props: {} }
 
   await apolloClient.query<QueryWishlist, QueryWishlistVariables>({
     query: QUERY_WISHLIST,
     variables: {
-      identifier: session.user.email as string
+      identifier: session?.user?.email as string
     }
   })
 
