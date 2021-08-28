@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import Heading from 'components/Heading'
 import Logo from 'components/Logo'
@@ -9,9 +10,17 @@ type AuthProps = {
   children: React.ReactNode
 }
 
+const currentYear = new Date().getFullYear()
+
 const Auth = ({ title, children }: AuthProps) => (
   <S.Wrapper>
     <S.BannerBlock>
+      <Image
+        src="/img/auth-bg.jpg"
+        alt="Won Games Auth Page"
+        layout="fill"
+        objectFit="cover"
+      />
       <S.BannerContent>
         <Link href="/">
           <a>
@@ -26,7 +35,9 @@ const Auth = ({ title, children }: AuthProps) => (
           </S.Subtitle>
         </div>
 
-        <S.Footer>Won Games 2020 © Todos os Direitos Reservados</S.Footer>
+        <S.Footer>
+          Won Games {currentYear} © Todos os Direitos Reservados
+        </S.Footer>
       </S.BannerContent>
     </S.BannerBlock>
 
