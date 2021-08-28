@@ -48,6 +48,7 @@ export const Wrapper = styled.div<RibbonProps>`
     align-items: center;
     font-weight: ${theme.font.bold};
     color: ${theme.colors.white};
+    z-index: ${theme.layers.base};
 
     &::before {
       content: '';
@@ -60,7 +61,7 @@ export const Wrapper = styled.div<RibbonProps>`
       border-bottom-width: 1rem;
     }
 
-    ${!!size && wrapperModifiers[size](theme)}
-    ${!!color && wrapperModifiers.color(theme, color)}
+    ${!!color && wrapperModifiers.color(theme, color)};
+    ${!!size && wrapperModifiers[size](theme)};
   `}
 `
