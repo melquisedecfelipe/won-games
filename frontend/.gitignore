@@ -38,3 +38,10 @@ public/sw.js
 public/workbox-*.js
 
 *.*:Zone.Identifier
+
+# storybook
+storybook-static
+
+# cypress
+cypress/screenshots
+cypress/videos
